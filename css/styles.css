@@ -28,7 +28,7 @@
 }
 
 body {
-  /* background: #f48c2e; */
+  background: rgba(244,140,46,.8);
   justify-content: space-evenly;
   flex-direction: column;
   display: flex;
@@ -45,13 +45,15 @@ li, ol, ul {
 
 h1 {
     font-size: 4em;
-    text-shadow:2px 2px 2px antiquewhite ;
-    margin-bottom: 0;
+    text-shadow:2px 2px 2px #37474F ;
+    margin-bottom: 10px;
+    color: var(--color-start);
 }
 
 h2 {
   margin: 0;
   text-transform: uppercase;
+  text-shadow:2px 2px 2px #37474F ;
   font-size: var(--font-size-large);
   margin: 0;
   font-size: 2em;

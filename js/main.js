@@ -1,25 +1,22 @@
 // Create an array for movies
 
 let movies = [
-    [''],
-    [''],
-    [''],
-    [''],
-    [''],
-    [''],
-    [''],
-    [''],
-    [''],
-    ['']
+    ['Forrest Gump'],
+    ['Doctor Strange'],
+    ['Hidden Figures'],
+    ['La La Land'],
+    ['Memphis Belle'],
+    ['Saving Private Ryan'],
+    ['Hot Fuzz'],
+    ['Beauty and the Beast'],
+    ['Pitch Perfect'],
+    ['Waterworld']
 ];
 
-// Variables
+console.log(movies);
 
-const overlay;
+// Hide overlay when you click start game button
 
-overlay = function () {
-    $('.btn_reset').on('click', function() {
+$('.btn__reset').on('click', function() {
         $('#overlay').css('display', 'none');
-    })
- };
-
+    });
