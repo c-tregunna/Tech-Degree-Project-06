@@ -15,8 +15,14 @@ let movies = [
 
 console.log(movies);
 
+// --------------
 // Hide overlay when you click start game button
+// --------------
 
-$('.btn__reset').on('click', function() {
-        $('#overlay').css('display', 'none');
-    });
+
+    const overlay = document.getElementById('overlay');
+    const startGame = document.querySelector('a.btn__reset');
+
+    startGame.addEventListener('click', () => {
+        overlay.style.display = 'none';
+      });
