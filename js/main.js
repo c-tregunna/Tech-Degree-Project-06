@@ -9,16 +9,16 @@ let missed = 0;
 // Create an array for movies
 
 let movies = [
-    ['forrest gump'],
-    ['doctor strange'],
-    ['hidden figures'],
-    ['la la land'],
-    ['memphis belle'],
-    ['saving private ryan'],
-    ['hot fuzz'],
-    ['beauty and the beast'],
-    ['pitch perfect'],
-    ['waterworld']
+    'forrest gump',
+    'doctor strange',
+    'hidden figures',
+    'la la land',
+    'memphis belle',
+    'saving private ryan',
+    'hot fuzz',
+    'beauty and the beast',
+    'pitch perfect',
+    'waterworld'
 ];
 
 // --------------
@@ -40,6 +40,7 @@ const getRandomPhraseAsArray = (movies) => { // should this arr be movies?
     let i = Math.floor(Math.random() * movies.length);
     let moviesSplit = movies[i].split('');
     return(moviesSplit);
+    console.log(moviesSplit);
 }
 
 getRandomPhraseAsArray(movies);
