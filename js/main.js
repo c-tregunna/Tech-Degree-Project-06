@@ -36,20 +36,62 @@ let movies = [
 // Return a random phrase from an array movies.split('')
 // --------------
 
-const getRandomPhraseAsArray = arr => {
+const getRandomPhraseAsArray = (movies) => { // should this arr be movies?
     let i = Math.floor(Math.random() * movies.length);
     let moviesSplit = movies[i].split('');
-    // return(moviesSplit);
-    console.log(moviesSplit);
+    return(moviesSplit);
 }
 
+getRandomPhraseAsArray(movies);
+
 // --------------
-// Adds the letters of a string to the display usee the ul in id "phrase"
+// Adds the letters of a string to the display use the ul in id "phrase"
 // --------------
 
-const addPhraseToDisplay = arr => {
+const addPhraseToDisplay = (movies) => {
+    for (let i = 0; i < movies.length; i += 1) {
+        const ul = document.querySelector('#phrase ul'); // targets the ul
+        const li = document.createElement('li'); // creates the li
+        // li.className = 'letter'; // add class of letter to li
+        const letter = document.createTextNode(movies[i]); // add text of letter movies to letter
+        ul.appendChild(li); //append to the ul
+        li.appendChild(letter); //append to the li
+        } if(movies === ' ') {
+            li.className = 'space';
+        } else {
+            li.className = 'letter';
+        }
+    }
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // --------------
 // Check if a letter is in the phrase
