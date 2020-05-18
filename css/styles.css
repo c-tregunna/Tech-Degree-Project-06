@@ -14,6 +14,7 @@
   --color-start: #5b85b7;
   --color-neutral: #445069;
   --color-neutral-light: #D2D2D2;
+  --color-active: rgb(155, 72, 0);
   --color-keys: #37474F;
   --color-keys-light: #E5E5E5;
   --font-size-large: 60px;
@@ -70,6 +71,15 @@ button {
   -webkit-transition: var(--transition);
   -o-transition: var(--transition);
   transition: var(--transition);
+}
+
+button:active {
+  background-color: var(--color-active);
+}
+
+button:focus {
+  outline: none;
+  border: 1px solid black;
 }
 
 .main-container {

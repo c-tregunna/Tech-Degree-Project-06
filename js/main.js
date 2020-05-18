@@ -48,20 +48,20 @@ getRandomPhraseAsArray(movies);
 // Adds the letters of a string to the display use the ul in id "phrase"
 // --------------
 
-const addPhraseToDisplay = (movies) => {
-    for (let i = 0; i < movies.length; i += 1) {
-        const ul = document.querySelector('#phrase ul'); // targets the ul
-        const li = document.createElement('li'); // creates the li
-        // li.className = 'letter'; // add class of letter to li
-        const letter = document.createTextNode(movies[i]); // add text of letter movies to letter
-        ul.appendChild(li); //append to the ul
-        li.appendChild(letter); //append to the li
-        } if(movies === ' ') {
-            li.className = 'space';
-        } else {
-            li.className = 'letter';
-        }
-    }
+    const addPhraseToDisplay = (movies) => {
+        for (let i = 0; i < movies.length; i += 1) {
+            const ul = document.querySelector('#phrase ul'); // targets the ul
+            const li = document.createElement('li'); // creates the li
+            const letter = document.createTextNode(movies[i]); // add text of letter movies to letter
+            if (letter === '') {
+                li.className = 'space';
+            } else {
+                li.className = 'letter';
+            }
+            li.appendChild(letter);
+            ul.appendChild(li); //append to the ul
+            }
+        };
 
 
 
