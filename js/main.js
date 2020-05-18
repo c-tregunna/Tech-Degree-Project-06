@@ -38,9 +38,8 @@ let movies = [
 
 const getRandomPhraseAsArray = (movies) => { // should this arr be movies?
     let i = Math.floor(Math.random() * movies.length);
-    let moviesSplit = movies[i].split('');
-    return(moviesSplit);
-    console.log(moviesSplit);
+    return movies[i].split('');
+    console.log(getRandomPhraseAsArray(movies));
 }
 
 getRandomPhraseAsArray(movies);
