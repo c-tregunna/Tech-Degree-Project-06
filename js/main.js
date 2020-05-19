@@ -61,6 +61,7 @@ getRandomPhraseAsArray(movies);
             ul.appendChild(li); //append to the ul
             // li.appendChild(letter);
             }
+            return arr[i];
 
             console.log(addPhraseToDisplay(movies));
         };
