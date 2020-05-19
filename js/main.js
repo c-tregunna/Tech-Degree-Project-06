@@ -77,8 +77,11 @@ document.addEventListener('click', (button) => {
                 li.className = 'show';
         }
         return match;
+        // console.log(checkLetter(match));
     }}
 });
+
+checkLetter(movies);
 
 
 
