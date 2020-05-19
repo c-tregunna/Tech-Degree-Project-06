@@ -47,65 +47,71 @@ getRandomPhraseAsArray(movies);
 // Adds the letters of a string to the display use the ul in id "phrase"
 // --------------
 
-    const addPhraseToDisplay = (arr) => {
-        for (let i = 0; i < arr.length; i += 1) {
-            const ul = document.querySelector('#phrase ul'); // targets the ul - can I use the phrase variable
-            const li = document.createElement('li'); // creates the li
-            li.textContent = getRandomPhraseAsArray(arr[i]);
-            // const letter = document.createTextNode(arr[i]); // add text of letter movies to letter *****
-            if (arr[i] === ' ') {
+const addPhraseToDisplay = (arr) => {
+    for (let i = 0; i < arr.length; i += 1) {
+        const ul = document.querySelector('#phrase ul'); // targets the ul - can I use the phrase variable
+        const li = document.createElement('li'); // creates the li
+        li.textContent = getRandomPhraseAsArray(arr[i]);
+        if (arr[i] === ' ') {
                 li.className = 'space';
             } else {
                 li.className = 'letter';
             }
             ul.appendChild(li); //append to the ul
-            // li.appendChild(letter);
-            }
-            return arr[i];
-        };
+    }
+};
 
 const movieArray = getRandomPhraseAsArray(movies);
-addPhraseToDisplay(movieArray);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+addPhraseToDisplay(movieArray); // moves above into this function
 
 // --------------
 // Check if a letter is in the phrase
 // --------------
 
-const checkLetter = button => {
+const checkLetter = (button) => { // change to show class
+    let match = null; // start with no matches
+    const letter = querySelectorAll('.letter'); // what we are searching, li with class letter
+    for (let i = 0; i < letter.length; i += 1) {
+        if(button === letter[i]) {
+            li.className = 'show';
+            match = true;
+        } else {
+            match = null;
+        }
+    }
+    return match;
+};
 
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // --------------
 // Check if the game has been won or lost
