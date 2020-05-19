@@ -39,8 +39,7 @@ let movies = [
 const getRandomPhraseAsArray = (arr) => { // should this arr be movies?
     let i = Math.floor(Math.random() * arr.length);
     return arr[i].split('');
-    console.log(getRandomPhraseAsArray(movies));
-}
+} // this function works, do not touch!!
 
 getRandomPhraseAsArray(movies);
 
@@ -62,8 +61,9 @@ getRandomPhraseAsArray(movies);
             li.appendChild(letter);
             }
 
-            console.log(addPhraseToDisplay(getRandomPhraseAsArray));
+            console.log(addPhraseToDisplay(movies));
         };
+
 
 
 
