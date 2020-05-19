@@ -49,16 +49,17 @@ getRandomPhraseAsArray(movies);
 
     const addPhraseToDisplay = (arr) => {
         for (let i = 0; i < arr.length; i += 1) {
-            const ul = document.querySelector('#phrase ul'); // targets the ul - can I use the phrase variable
+            const ul = phrase; // targets the ul - can I use the phrase variable
             const li = document.createElement('li'); // creates the li
-            const letter = document.createTextNode(arr[i]); // add text of letter movies to letter *****
+            li.textContent = movies[i];
+            // const letter = document.createTextNode(arr[i]); // add text of letter movies to letter *****
             if (arr[i] === ' ') {
                 li.className = 'space';
             } else {
                 li.className = 'letter';
             }
             ul.appendChild(li); //append to the ul
-            li.appendChild(letter);
+            // li.appendChild(letter);
             }
 
             console.log(addPhraseToDisplay(movies));
