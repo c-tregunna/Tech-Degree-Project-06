@@ -49,9 +49,9 @@ getRandomPhraseAsArray(movies);
 
     const addPhraseToDisplay = (arr) => {
         for (let i = 0; i < arr.length; i += 1) {
-            const ul = phrase; // targets the ul - can I use the phrase variable
+            const ul = document.querySelector('#phrase ul'); // targets the ul - can I use the phrase variable
             const li = document.createElement('li'); // creates the li
-            li.textContent = movies[i];
+            li.textContent = getRandomPhraseAsArray(movies[i]);
             // const letter = document.createTextNode(arr[i]); // add text of letter movies to letter *****
             if (arr[i] === ' ') {
                 li.className = 'space';
@@ -62,9 +62,10 @@ getRandomPhraseAsArray(movies);
             // li.appendChild(letter);
             }
             return arr[i];
-
-            console.log(addPhraseToDisplay(movies));
         };
+
+const movieArray = getRandomPhraseAsArray(movies);
+addPhraseToDisplay(movieArray);
 
 
 
