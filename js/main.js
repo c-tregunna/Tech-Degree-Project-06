@@ -36,9 +36,9 @@ let movies = [
 // Return a random phrase from an array movies.split('')
 // --------------
 
-const getRandomPhraseAsArray = (movies) => { // should this arr be movies?
-    let i = Math.floor(Math.random() * movies.length);
-    return movies[i].split('');
+const getRandomPhraseAsArray = (arr) => { // should this arr be movies?
+    let i = Math.floor(Math.random() * arr.length);
+    return arr[i].split('');
     console.log(getRandomPhraseAsArray(movies));
 }
 
@@ -48,20 +48,23 @@ getRandomPhraseAsArray(movies);
 // Adds the letters of a string to the display use the ul in id "phrase"
 // --------------
 
-    const addPhraseToDisplay = (movies) => {
-        for (let i = 0; i < movies.length; i += 1) {
-            const ul = document.querySelector('#phrase ul'); // targets the ul
+    const addPhraseToDisplay = (arr) => {
+        for (let i = 0; i < arr.length; i += 1) {
+            const ul = document.querySelector('#phrase ul'); // targets the ul - can I use the phrase variable
             const li = document.createElement('li'); // creates the li
-            const letter = document.createTextNode(movies[i]); // add text of letter movies to letter
-            if (letter === '') {
+            const letter = document.createTextNode(arr[i]); // add text of letter movies to letter *****
+            if (arr[i] === ' ') {
                 li.className = 'space';
             } else {
                 li.className = 'letter';
             }
-            li.appendChild(letter);
             ul.appendChild(li); //append to the ul
+            li.appendChild(letter);
             }
+
+            console.log(addPhraseToDisplay(getRandomPhraseAsArray));
         };
+
 
 
 
