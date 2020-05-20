@@ -96,7 +96,7 @@ const checkWin = () => {
         winTitle.textContent = 'Sorry, you lost!'; // if above is false show this, used all their lives
         overlay.style.display = 'flex'; // if above is false show this, used all their lives
     }
-    console.log(letter);
+
 }
 
 // --------------
@@ -110,8 +110,7 @@ qwerty.addEventListener('click', e => {
     }
     const letterFound = checkLetter(event.target.textContent);
     if (letterFound === true) {
-        const li = document.createElement('li'); // creates the li
-        li.className = 'show';
+        letter.className = 'show';
     }
 });
 
