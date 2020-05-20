@@ -86,66 +86,17 @@ const checkLetter = (button) => {
 const checkWin = () => {
     const letter = document.querySelectorAll('li .letter');
     const show = document.querySelectorAll('li .show');
-    const winTitle = document.querySelector('.title')
-    if (letter.length === show.length) {
-        overlay.className = 'win';
-        winTitle.textContent = 'YOU WON!';
-        overlay.style.display = 'flex';
-
+    const winTitle = document.querySelector('.title');
+    if (letter.length === show.length) { // does the li with letter match li with show
+        overlay.className = 'win'; // if above is true show this
+        winTitle.textContent = 'YOU WON!'; // if above is true show this
+        overlay.style.display = 'flex'; // if above is true show this
+    } else if (missed >= 5) { // if above is false show this, used all their lives
+        overlay.className = 'lose'; // if above is false show this, used all their lives
+        winTitle.textContent = 'Sorry, you lost!'; // if above is false show this, used all their lives
+        overlay.style.display = 'flex'; // if above is false show this, used all their lives
     }
-
 }
-
-const checkWin = () => {
-    const letter = document.querySelectorAll(".letter");
-    const show = document.querySelectorAll(".show");
-    const title = document.querySelector(".title");
-    if (letter.length === show.length) {
-      setTimeout(() => {
-        overlay.classList.add("win");
-        title.textContent = "YOU WIN!";
-        overlay.style.display = "flex";
-        startButton.textContent = "Reset Game";
-      }, 1000);
-    }
-    if (missed >= 5) {
-      setTimeout(() => {
-        overlay.classList.add("lose");
-        title.textContent = "You Lose. Try again?";
-        overlay.style.display = "flex";
-        startButton.textContent = "Reset Game";
-      }, 300);
-    }
-  };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // --------------
 // Listen for the on screen keyboard to be clicked
@@ -154,4 +105,37 @@ const checkWin = () => {
 qwerty.addEventListener('click', e => {
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
