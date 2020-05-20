@@ -73,7 +73,7 @@ const checkLetter = (button) => {
     for (let i = 0; i < letters.length; i += 1) {
         if (button === letters[i].textContent) {
             match = true;
-            letters.className = 'show'; // does this need to be classList.add
+            letters[i].className = 'show letter'; // does this need to be classList.add
         }
     }
     return match;
