@@ -69,7 +69,7 @@ addPhraseToDisplay(movieArray); // moves above into this function
 // --------------
 let match = null; // start with no matches
 const checkLetter = (button) => {
-    const letter = document.querySelectorAll('li .letter'); // what we are searching, li with class letter
+    const letter = document.querySelectorAll('.letter'); // what we are searching, li with class letter
     for (let i = 0; i < letter.length; i += 1) {
         if (button === letter[i]) {
             match = true;
@@ -84,8 +84,8 @@ const checkLetter = (button) => {
 // --------------
 
 const checkWin = () => {
-    const letter = document.querySelectorAll('li .letter');
-    const show = document.querySelectorAll('li .show');
+    const letter = document.querySelectorAll('.letter');
+    const show = document.querySelectorAll('.show');
     const winTitle = document.querySelector('.title');
     if (letter.length === show.length) { // does the li with letter match li with show
         overlay.className = 'win'; // if above is true show this
@@ -96,6 +96,7 @@ const checkWin = () => {
         winTitle.textContent = 'Sorry, you lost!'; // if above is false show this, used all their lives
         overlay.style.display = 'flex'; // if above is false show this, used all their lives
     }
+    console.log(letter);
 }
 
 // --------------
@@ -113,41 +114,4 @@ qwerty.addEventListener('click', e => {
         li.className = 'show';
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
