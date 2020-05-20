@@ -69,50 +69,15 @@ addPhraseToDisplay(movieArray); // moves above into this function
 // --------------
 let match = null; // start with no matches
 const checkLetter = (button) => {
-	document.addEventListener('click', (button) => {
-		const letter = document.querySelectorAll('li .letter'); // what we are searching, li with class letter
-		for (let i = 0; i < letter.length; i += 1) {
-			if (button === letter[i]) {
-                match = true;
-                letter.className = 'show';
-			} else {
-                match = null;
-            }
-			return match;
-		}
-	});
+    const letter = document.querySelectorAll('li .letter'); // what we are searching, li with class letter
+    for (let i = 0; i < letter.length; i += 1) {
+        if (button === letter[i]) {
+            match = true;
+            letter.className = 'show';
+        }
+    }
+    return match;
 };
-checkLetter();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // --------------
 // Check if the game has been won or lost
@@ -121,6 +86,36 @@ checkLetter();
 const checkWin = () => {
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // --------------
 // Listen for the on screen keyboard to be clicked
