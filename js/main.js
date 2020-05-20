@@ -73,7 +73,7 @@ const checkLetter = (button) => {
     for (let i = 0; i < letter.length; i += 1) {
         if (button === letter[i]) {
             match = true;
-            letter.className = 'show';
+            letter.className = 'show'; // does this need to be classList.add
         }
     }
     return match;
@@ -103,8 +103,20 @@ const checkWin = () => {
 // --------------
 
 qwerty.addEventListener('click', e => {
-
+    if (e.target.tagName === 'BUTTON') { //targets the button
+        e.target.classList.add('chosen'); // when clicked add chosen button
+        e.target.setAttribute('disabled', true);
+    }
+    const letterFound = checkLetter(event.target.textContent);
+    if (letterFound === true) {
+        const li = document.createElement('li'); // creates the li
+        li.className = 'show';
+    }
 });
+
+
+
+
 
 
 
