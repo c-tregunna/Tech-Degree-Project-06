@@ -69,11 +69,11 @@ addPhraseToDisplay(movieArray); // moves above into this function
 // --------------
 let match = null; // start with no matches
 const checkLetter = (button) => {
-    const letter = document.querySelectorAll('.letter').textContent; // what we are searching, li with class letter
-    for (let i = 0; i < letter.length; i += 1) {
-        if (button === letter[i].textContent) {
+    const letters = document.querySelectorAll('.letter'); // what we are searching, li with class letter
+    for (let i = 0; i < letters.length; i += 1) {
+        if (button === letters[i].textContent) {
             match = true;
-            letter.className = 'show'; // does this need to be classList.add
+            letters.className = 'show'; // does this need to be classList.add
         }
     }
     return match;
@@ -109,7 +109,7 @@ qwerty.addEventListener('click', e => {
     }
     const letterFound = checkLetter(event.target.textContent);
     if (letterFound === true) {
-        const li = document.querySelectorAll('li'); // creates the li
+        const li = document.querySelectorAll('li .letter'); // creates the li
         li.className = 'show';
     }
 });
