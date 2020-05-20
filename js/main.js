@@ -67,20 +67,21 @@ addPhraseToDisplay(movieArray); // moves above into this function
 // --------------
 // Check if a letter is in the phrase
 // --------------
-
+let match = null; // start with no matches
 const checkLetter = (button) => {
 	document.addEventListener('click', (button) => {
-		let match = null; // start with no matches
-		const letter = document.querySelectorAll('.letter'); // what we are searching, li with class letter
+		const letter = document.querySelectorAll('li .letter'); // what we are searching, li with class letter
 		for (let i = 0; i < letter.length; i += 1) {
 			if (button === letter[i]) {
-                li.className = 'show';
                 match = true;
-			}
+                letter.className = 'show';
+			} else {
+                match = null;
+            }
 			return match;
 		}
 	});
-}
+};
 checkLetter();
 
 
