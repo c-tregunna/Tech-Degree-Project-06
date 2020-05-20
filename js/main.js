@@ -6,6 +6,9 @@ const phrase = document.getElementById('phrase');
 const resetButton = document.querySelector('.btn__reset');
 let missed = 0;
 
+const overlay = document.getElementById('overlay');
+const startGame = document.querySelector('a.btn__reset');
+
 // Create an array for movies
 
 let movies = [
@@ -24,9 +27,6 @@ let movies = [
 // --------------
 // Hide overlay when you click start game button
 // --------------
-
-    const overlay = document.getElementById('overlay');
-    const startGame = document.querySelector('a.btn__reset');
 
     startGame.addEventListener('click', () => {
         overlay.style.display = 'none';
@@ -84,9 +84,39 @@ const checkLetter = (button) => {
 // --------------
 
 const checkWin = () => {
+    const letter = document.querySelectorAll('li .letter');
+    const show = document.querySelectorAll('li .show');
+    const winTitle = document.querySelector('.title')
+    if (letter.length === show.length) {
+        overlay.className = 'win';
+        winTitle.textContent = 'YOU WON!';
+        overlay.style.display = 'flex';
+
+    }
 
 }
 
+const checkWin = () => {
+    const letter = document.querySelectorAll(".letter");
+    const show = document.querySelectorAll(".show");
+    const title = document.querySelector(".title");
+    if (letter.length === show.length) {
+      setTimeout(() => {
+        overlay.classList.add("win");
+        title.textContent = "YOU WIN!";
+        overlay.style.display = "flex";
+        startButton.textContent = "Reset Game";
+      }, 1000);
+    }
+    if (missed >= 5) {
+      setTimeout(() => {
+        overlay.classList.add("lose");
+        title.textContent = "You Lose. Try again?";
+        overlay.style.display = "flex";
+        startButton.textContent = "Reset Game";
+      }, 300);
+    }
+  };
 
 
 
