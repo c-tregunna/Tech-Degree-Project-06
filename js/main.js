@@ -85,6 +85,7 @@ const checkLetter = (button) => {
 
 const checkWin = () => {
     const letter = document.querySelectorAll('.letter').textContent;
+    console.log(letter);
     const show = document.querySelectorAll('.show');
     const winTitle = document.querySelector('.title');
     if (letter.length === show.length) { // does the li with letter match li with show
