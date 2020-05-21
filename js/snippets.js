@@ -44,3 +44,14 @@ if (letterFound === null) { // in letterfound in not in string
     missed += 1; // add 1 to the lives - max 5
     console.log(letterFound);
 }
+
+let heartLives = document.querySelector('img'); // select the image
+for (i = 0; i < heartLives.length; i =+ 0) {
+if (letterFound === null) { // in letterfound in not in string
+    heartLives.setAttribute('src', 'images/lostHeart.png') // change the src
+    missed += 1; // add 1 to the lives - max 5
+    console.log(letterFound);
+}
+
+checkWin(checkLetter);
+};

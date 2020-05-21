@@ -14,6 +14,8 @@ const name = prompt('Welcome to the game, what is your name?')
 let heartLives = document.querySelectorAll('img'); // select the image
 
 
+
+
 // Create an array for movies
 
 let movies = [
@@ -72,8 +74,9 @@ addPhraseToDisplay(movieArray); // moves above into this function
 // --------------
 // Check if a letter is in the phrase - DO NOT TOUCH!!!!
 // --------------
-let match = null; // start with no matches
+ // start with no matches
 const checkLetter = (button) => {
+    let match = null;
     const letters = document.querySelectorAll('.letter'); // what we are searching, li with class letter
     for (let i = 0; i < letters.length; i += 1) {
         if (button === letters[i].textContent) {
@@ -129,15 +132,14 @@ qwerty.addEventListener('click', e => {
         const li = document.querySelectorAll('li .letter'); // creates the li
         li.className = 'show';
     }
-    let heartLives = document.querySelector('img'); // select the image
-    for (i = 0; i < heartLives.length; i =+ 0) {
     if (letterFound === null) { // in letterfound in not in string
-        heartLives.setAttribute('src', 'images/lostHeart.png') // change the src
-        missed += 1; // add 1 to the lives - max 5
-        console.log(letterFound);
-    }
+        for (let i = 0; i < heartLives.length; i++) {
+            heartLives[missed].setAttribute('src', 'images/lostHeart.png') // change the src
+        }
+    missed++;
+    console.log(letterFound);
 }
-    checkWin(checkLetter);
+checkWin(checkLetter);
 });
 
 // --------------
