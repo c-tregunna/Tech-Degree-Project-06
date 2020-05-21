@@ -9,6 +9,8 @@ let missed = 0;
 const overlay = document.getElementById('overlay');
 const startGame = document.querySelector('a.btn__reset');
 
+const name = prompt('Welcome to the game, what is your name?')
+
 
 
 
@@ -93,14 +95,14 @@ const checkWin = () => {
     if (letter.length === show.length) { // does the li with letter match li with show
         setTimeout(() => { // set delay to screen
         overlay.className = 'win'; // if above is true show this
-        winTitle.textContent = 'YOU WON!'; // if above is true show this
+        winTitle.textContent = `YOU WON! Well done ${name}!`; // if above is true show this
         overlay.style.display = 'flex'; // if above is true show this
         resetButton.textContent = 'Play Again';
     }, 800);
  } else if (missed >= 5) { // if above is false show this, used all their lives
         setTimeout(() => {
         overlay.className = 'lose'; // if above is false show this, used all their lives
-        winTitle.textContent = 'Sorry, you lost!'; // if above is false show this, used all their lives
+        winTitle.textContent = `Sorry ${name}, you lost! Would you like to try again?`; // if above is false show this, used all their lives
         overlay.style.display = 'flex'; // if above is false show this, used all their lives
         resetButton.textContent = 'Try Again';
     }, 800);

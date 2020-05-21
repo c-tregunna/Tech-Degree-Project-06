@@ -18,7 +18,7 @@
     }
 
     document.addEventListener('click', (button) => {
-    const checkLetter = (button) => { 
+    const checkLetter = (button) => {
         let match = true; // start with no matches
         const letter = querySelectorAll('.letter'); // what we are searching, li with class letter
         for (let i = 0; i < letter.length; i += 1) {
@@ -28,3 +28,12 @@
         return match;
     }}
 });
+
+//
+//     if (letterFound === null && e.target.tagName === "BUTTON") {
+//         let heart = document.querySelectorAll('img');
+//         heart.setAttribute('src', 'images/lostHeart.png');
+//         missed += 1;
+//     }
+//     checkWin(checkLetter);
+// });
