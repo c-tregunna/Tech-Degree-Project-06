@@ -96,6 +96,9 @@ const checkWin = () => {
         setTimeout(() => { // set delay to screen
         overlay.className = 'win'; // if above is true show this
         winTitle.textContent = `YOU WON! Well done ${name}!`; // if above is true show this
+        if (name === null ){
+            winTitle.textContent = `YOU WON! Well done!`;
+        }
         overlay.style.display = 'flex'; // if above is true show this
         resetButton.textContent = 'Play Again';
     }, 800);
@@ -103,6 +106,9 @@ const checkWin = () => {
         setTimeout(() => {
         overlay.className = 'lose'; // if above is false show this, used all their lives
         winTitle.textContent = `Sorry ${name}, you lost! Would you like to try again?`; // if above is false show this, used all their lives
+        if (name === null ){
+            winTitle.textContent = `Sorry you lost! Would you like to try again?`;
+        }
         overlay.style.display = 'flex'; // if above is false show this, used all their lives
         resetButton.textContent = 'Try Again';
     }, 800);
