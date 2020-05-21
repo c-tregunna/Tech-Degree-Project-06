@@ -37,3 +37,10 @@
 //     }
 //     checkWin(checkLetter);
 // });
+
+let heartLives = document.querySelector('img'); // select the image
+if (letterFound === null) { // in letterfound in not in string
+    heartLives.setAttribute('src', 'images/lostHeart.png') // change the src
+    missed += 1; // add 1 to the lives - max 5
+    console.log(letterFound);
+}
