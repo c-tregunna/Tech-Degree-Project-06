@@ -119,11 +119,22 @@ button:focus {
   width: 15px;
 }
 
+@keyframes spin {
+  50% {
+    transform: rotate(400deg) scale(1.2);
+    background-color: yellow;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
 .show {
   color: #000;
   background-color: #76CE82;
   transition: all 0.5s;
-  transform: rotateX(360deg);
+  animation: spin 1s ease-out backwards;
+  /* transform: rotateX(720deg) rotateY(360deg); */
 }
 
 /* Keyboard */

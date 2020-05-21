@@ -9,6 +9,9 @@ let missed = 0;
 const overlay = document.getElementById('overlay');
 const startGame = document.querySelector('a.btn__reset');
 
+
+
+
 // Create an array for movies
 
 let movies = [
@@ -65,7 +68,7 @@ const movieArray = getRandomPhraseAsArray(movies);
 addPhraseToDisplay(movieArray); // moves above into this function
 
 // --------------
-// Check if a letter is in the phrase
+// Check if a letter is in the phrase - DO NOT TOUCH!!!!
 // --------------
 let match = null; // start with no matches
 const checkLetter = (button) => {
@@ -73,7 +76,7 @@ const checkLetter = (button) => {
     for (let i = 0; i < letters.length; i += 1) {
         if (button === letters[i].textContent) {
             match = true;
-            letters[i].className = 'show letter'; // does this need to be classList.add
+            letters[i].className = 'show letter'; // need to keep the letter class for styking
         }
     }
     return match;
@@ -112,4 +115,12 @@ qwerty.addEventListener('click', e => {
         const li = document.querySelectorAll('li .letter'); // creates the li
         li.className = 'show';
     }
+    let heartLives = document.querySelector('img'); // select the image
+    if (letterFound === null) { // in letterfound in not in string
+        heartLives.setAttribute('src', 'images/lostHeart.png') // change the src
+        missed += 1; // add 1 to the lives - max 5
+        console.log(letterFound);
+    }
 });
+
+//If the checkLetter function returns a null value, the player has guessed the wrong letter. In the keyboard event listener, after checkLetter is called, write a statement to check the value of the letterFound variable. If the value is null, remove one of the tries from the scoreboard. If you haven't created it yet, make sure you have a missed variable to store the state of the scoreboard (initialized to 0). When you remove a try from the scoreboard, make sure to increase the missed count by 1.
