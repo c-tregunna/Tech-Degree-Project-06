@@ -13,7 +13,6 @@ const name = prompt('Welcome to the game, what is your name?')
 
 
 
-
 // Create an array for movies
 
 let movies = [
@@ -96,7 +95,7 @@ const checkWin = () => {
         setTimeout(() => { // set delay to screen
         overlay.className = 'win'; // if above is true show this
         winTitle.textContent = `YOU WON! Well done ${name}!`; // if above is true show this
-        if (name === null ){
+        if (name === null ) { // if they dont add a name run this
             winTitle.textContent = `YOU WON! Well done!`;
         }
         overlay.style.display = 'flex'; // if above is true show this
@@ -106,7 +105,7 @@ const checkWin = () => {
         setTimeout(() => {
         overlay.className = 'lose'; // if above is false show this, used all their lives
         winTitle.textContent = `Sorry ${name}, you lost! Would you like to try again?`; // if above is false show this, used all their lives
-        if (name === null ){
+        if (name === null ) { // if they dont add a name run this
             winTitle.textContent = `Sorry you lost! Would you like to try again?`;
         }
         overlay.style.display = 'flex'; // if above is false show this, used all their lives
@@ -129,12 +128,16 @@ qwerty.addEventListener('click', e => {
         const li = document.querySelectorAll('li .letter'); // creates the li
         li.className = 'show';
     }
-    let heartLives = document.querySelector('img'); // select the image
-    if (letterFound === null) { // in letterfound in not in string
-        heartLives.setAttribute('src', 'images/lostHeart.png') // change the src
-        missed += 1; // add 1 to the lives - max 5
-        console.log(letterFound);
+    let heartLives = document.querySelectorAll('img'); // select the image
+    let lives = (heartLives) => {
+    for (i = 0; i < heartLives.length; i += 1) { // in letterfound in not in string
+        if (letterFound == null) {
+            heartLives.setAttribute('src', 'images/lostHeart.png') // change the src
+            missed += 1; // add 1 to the lives - max 5
+            console.log(letterFound);
+        }
     }
+}
     checkWin(checkLetter);
 });
 
