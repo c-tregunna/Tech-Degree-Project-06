@@ -135,8 +135,8 @@ qwerty.addEventListener('click', e => {
 // --------------
 
 resetButton.addEventListener("click", (e) => {
-    if (e.target.textContent === "Play Again") {
-        location.reload();
+    if (e.target.textContent === "Play Again") { // if resetButton text is play again
+        location.reload(); //reload page, takes back to start game page
     } else if (e.target.textContent === "Try Again") {
         location.reload();
     }
