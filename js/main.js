@@ -91,14 +91,20 @@ const checkWin = () => {
     const show = document.querySelectorAll('.show');
     const winTitle = document.querySelector('.title');
     if (letter.length === show.length) { // does the li with letter match li with show
+        setTimeout(() => { // set delay to screen
         overlay.className = 'win'; // if above is true show this
         winTitle.textContent = 'YOU WON!'; // if above is true show this
         overlay.style.display = 'flex'; // if above is true show this
-    } else if (missed >= 5) { // if above is false show this, used all their lives
+        resetButton.textContent = 'Play Again';
+    }, 800);
+ } else if (missed >= 5) { // if above is false show this, used all their lives
+        setTimeout(() => {
         overlay.className = 'lose'; // if above is false show this, used all their lives
         winTitle.textContent = 'Sorry, you lost!'; // if above is false show this, used all their lives
         overlay.style.display = 'flex'; // if above is false show this, used all their lives
-    }
+        resetButton.textContent = 'Try Again';
+    }, 800);
+}
 }
 
 // --------------
@@ -121,6 +127,19 @@ qwerty.addEventListener('click', e => {
         missed += 1; // add 1 to the lives - max 5
         console.log(letterFound);
     }
+    checkWin(checkLetter);
 });
+
+// --------------
+// Reset
+// --------------
+
+resetButton.addEventListener("click", (e) => {
+    if (e.target.textContent === "Play Again") {
+        location.reload();
+    } else if (e.target.textContent === "Try Again") {
+        location.reload();
+    }
+  });
 
 //If the checkLetter function returns a null value, the player has guessed the wrong letter. In the keyboard event listener, after checkLetter is called, write a statement to check the value of the letterFound variable. If the value is null, remove one of the tries from the scoreboard. If you haven't created it yet, make sure you have a missed variable to store the state of the scoreboard (initialized to 0). When you remove a try from the scoreboard, make sure to increase the missed count by 1.
