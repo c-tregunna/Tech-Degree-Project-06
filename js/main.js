@@ -132,12 +132,11 @@ qwerty.addEventListener('click', e => {
         const li = document.querySelectorAll('li .letter'); // creates the li
         li.className = 'show';
     }
-    if (letterFound === null) { // in letterfound in not in string
+    if (letterFound === null && e.target.tagName === "BUTTON") { // in letterfound in not in string && e.target.tagName === "BUTTON" stops losing a life inbetween keys, so you are just tragetting button
         for (let i = 0; i < heartLives.length; i++) { // loops through the lives
             heartLives[missed].setAttribute('src', 'images/lostHeart.png') // change the src
         }
     missed++;
-    console.log(letterFound);
 }
 checkWin(checkLetter);
 });
