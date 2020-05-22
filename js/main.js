@@ -22,7 +22,7 @@ let movies = [
     'forrest gump',
     'doctor strange',
     'hidden figures',
-    'la la land',
+    'american history x',
     'memphis belle',
     'saving private ryan',
     'hot fuzz',
@@ -104,7 +104,7 @@ const checkWin = () => {
         }
         overlay.style.display = 'flex'; // if above is true show this
         resetButton.textContent = 'Play Again';
-    }, 800);
+    }, 1000);
  } else if (missed >= 5) { // if above is false show this, used all their lives
         setTimeout(() => {
         overlay.className = 'lose'; // if above is false show this, used all their lives
@@ -114,7 +114,7 @@ const checkWin = () => {
         }
         overlay.style.display = 'flex'; // if above is false show this, used all their lives
         resetButton.textContent = 'Try Again';
-    }, 800);
+    }, 1000);
 }
 }
 
@@ -125,7 +125,7 @@ const checkWin = () => {
 qwerty.addEventListener('click', e => {
     if (e.target.tagName === 'BUTTON') { //targets the button
         e.target.classList.add('chosen'); // when clicked add chosen button
-        e.target.setAttribute('disabled', true);
+        e.target.setAttribute('disabled', true); // sets the button to disable so you can't click
     }
     const letterFound = checkLetter(event.target.textContent);
     if (letterFound === true) {
@@ -133,7 +133,7 @@ qwerty.addEventListener('click', e => {
         li.className = 'show';
     }
     if (letterFound === null) { // in letterfound in not in string
-        for (let i = 0; i < heartLives.length; i++) {
+        for (let i = 0; i < heartLives.length; i++) { // loops through the lives
             heartLives[missed].setAttribute('src', 'images/lostHeart.png') // change the src
         }
     missed++;
@@ -143,7 +143,7 @@ checkWin(checkLetter);
 });
 
 // --------------
-// Reset
+// Reset - refresh the page when click button
 // --------------
 
 resetButton.addEventListener("click", (e) => {
@@ -154,4 +154,3 @@ resetButton.addEventListener("click", (e) => {
     }
   });
 
-//If the checkLetter function returns a null value, the player has guessed the wrong letter. In the keyboard event listener, after checkLetter is called, write a statement to check the value of the letterFound variable. If the value is null, remove one of the tries from the scoreboard. If you haven't created it yet, make sure you have a missed variable to store the state of the scoreboard (initialized to 0). When you remove a try from the scoreboard, make sure to increase the missed count by 1.

@@ -134,7 +134,6 @@ button:focus {
   background-color: #76CE82;
   transition: all 0.5s;
   animation: spin 1s ease-out backwards;
-  /* transform: rotateX(720deg) rotateY(360deg); */
 }
 
 /* Keyboard */
